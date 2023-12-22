@@ -1,0 +1,67 @@
+services:
+
+  # vscode devcontainer (the service vscode will use as the interactive workspace container)
+  vscode:
+
+    # build from Dockerfile in context
+    build:
+      context: build
+
+    # env_file(s) = ENV variables are set as the container launches up - so they are available at RUNTIME
+    env_file:
+      - ../.env
+
+    # docker run -i / interactive
+    # devcontainer should run interactive
+    stdin_open: true
+
+    # docker run -t / terminal
+    # devcontainer should have a terminal
+    tty: true
+
+    # volumes
+    volumes:
+
+      # localtime
+      - /etc/localtime:/etc/localtime:ro
+
+      # workspace
+      - ..:/workspace:cached
+
+  # service provided
+  service:
+
+    # build from Dockerfile in context
+    build:
+      context: build
+
+    # env_file(s) = ENV variables are set as the container launches up - so they are available at RUNTIME
+    env_file:
+      - ../.env
+
+    # volumes
+    volumes:
+
+      # localtime
+      - /etc/localtime:/etc/localtime:ro
+
+      # workspace
+      - ..:/workspace:cached
+
+    command: pwsh -f /workspace/command.ps1
+
+  # mongo(db) - #justAnotherContainer
+  mongo:
+
+    # https://hub.docker.com/_/mongo/
+    image: mongo:7-jammy
+
+    # volumes
+    volumes:
+
+      # localtime
+      - /etc/localtime:/etc/localtime:ro
+
+      # data
+      - ../data/mongo/configdb:/data/configdb:cached
+      - ../data/mongo/db:/data/db:cached

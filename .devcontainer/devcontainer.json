@@ -1,0 +1,53 @@
+{
+  // General devcontainer.json properties
+  // https://containers.dev/implementors/json_reference/
+  // name - type: string - A name for the dev container displayed in the UI.
+  "name": "PowerShellDev",
+  // Docker Compose specific properties
+  // https://containers.dev/implementors/json_reference/#compose-specific
+  // dockerComposeFile - type: object|array - Required when using Docker Compose. Path or an ordered list of paths to Docker Compose files relative to the devcontainer.json file.
+  "dockerComposeFile": [
+    "docker-compose.yml"
+  ],
+  // service - type: string - Required when using Docker Compose. The name of the service devcontainer.json supporting services / tools should connect to once running.
+  "service": "vscode",
+  // workspaceFolder - type: string - Sets the default path that devcontainer.json supporting services / tools should open when connecting to the container
+  "workspaceFolder": "/workspace",
+  // Product specific properties
+  // https://containers.dev/supporting
+  "customizations": {
+    "vscode": {
+      // customizations.vscode.extensions - type: array - An array of extension IDs that specify the extensions that should be installed inside the container when it is created
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "ms-vscode-remote.remote-containers",
+        "ms-vscode.powershell",
+        "EditorConfig.EditorConfig"
+      ],
+      // customizations.vscode.settings - type: object - Adds default settings.json values into a container/machine specific settings file.
+      "settings": {
+        "terminal.integrated.profiles.linux": {
+          "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+          }
+        },
+        "terminal.integrated.defaultProfile.linux": "pwsh",
+        "terminal.integrated.profiles.osx": {
+          "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+          }
+        },
+        "terminal.integrated.defaultProfile.osx": "pwsh",
+        "terminal.integrated.profiles.windows": {
+          "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+          }
+        },
+        "terminal.integrated.defaultProfile.windows": "pwsh"
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+[*.{ps1,json,yml}]
+indent_style = space
+indent_size = 2
+charset = utf-8
+trim_trailing_whitespace = yes
+insert_final_newline = yes
+
+[*.ps1]
+indent_size = 4
+charset = utf-8-bom
