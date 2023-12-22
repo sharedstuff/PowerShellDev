@@ -30,13 +30,13 @@ some vscode workspace settings
 ### /config *  
 config files consumed by DevContainer  
   
-#### /config/Certificate.pfx  
+#### /config/MgGraphContainer.Certificate.pfx  
 the Certificate used by Connect-MgGraph(Container)
   
-#### /config/ClientId  
+#### /config/MgGraphContainer.ClientId  
 the ClientId used by Connect-MgGraph(Container)  
   
-#### /config/TenantId  
+#### /config/MgGraphContainer.TenantId  
 the TenantId used by Connect-MgGraph(Container)  
 
 ### /data *  
