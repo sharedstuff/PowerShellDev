@@ -19,10 +19,11 @@
     "vscode": {
       // customizations.vscode.extensions - type: array - An array of extension IDs that specify the extensions that should be installed inside the container when it is created
       "extensions": [
+        "eamodio.gitlens",
+        "editorconfig.editorconfig",
         "ms-azuretools.vscode-docker",
         "ms-vscode-remote.remote-containers",
-        "ms-vscode.powershell",
-        "EditorConfig.EditorConfig"
+        "ms-vscode.powershell"
       ],
       // customizations.vscode.settings - type: object - Adds default settings.json values into a container/machine specific settings file.
       "settings": {
