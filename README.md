@@ -53,7 +53,7 @@ public PowerShell functions
 ---  
   
 ### /test  
-PowerShell Test-Functions  
+misc. PowerShell scripts  
   
 ---  
   
