@@ -8,10 +8,8 @@ PowerShell DevContainer (runtime environment) that aims to ease the development 
 - Mongo(DB)  
 - a service example based on the DevContainer  
   
-
-## Changelog  
   
-### 2023-12-22 Initial commit  
+## Specs   
 - Alpine 3.18  
 - PowerShell 7.4.0  
 - PowerShell Modules:  
@@ -20,7 +18,7 @@ PowerShell DevContainer (runtime environment) that aims to ease the development 
   - Pode 2.9.0 (e3ea217c-fc3d-406b-95d5-4304ab06c6af)  
 - Mongo 7-jammy  
   
-
+  
 ## Structure & Logic  
 \* ignored by git  
   
