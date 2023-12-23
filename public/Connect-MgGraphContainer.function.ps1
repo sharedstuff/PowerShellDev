@@ -1,5 +1,7 @@
 Function Connect-MgGraphContainer {
 
+    #Requires -Modules @{ ModuleName='Microsoft.Graph.Authentication'; GUID='883916f2-9184-46ee-b1f8-b6a2fb784cee'; ModuleVersion='2.11.1' }
+
     <#
 
         .SYNOPSIS

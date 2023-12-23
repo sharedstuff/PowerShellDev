@@ -1,3 +1,4 @@
+# https://hub.docker.com/_/alpine
 ARG Container_AlpineTag=3.18
 FROM alpine:${Container_AlpineTag}
 
@@ -47,7 +48,6 @@ ADD ${PowerShell_DownloadURL} /tmp/powershell.tar.gz
 # Set execute permissions
 # Create the symbolic link that points to pwsh
 # CleanUp
-# Define Args for the needed to add the package
 RUN mkdir -p /opt/microsoft/powershell/7 \
     && tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/7 \
     && chmod +x /opt/microsoft/powershell/7/pwsh \
@@ -66,10 +66,14 @@ HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD [ "pw
 # Set PSGallery trusted
 RUN Set-PSRepository PSGallery -InstallationPolicy trusted
 
-# Install-Module Microsoft.Graph
+# Install-Module Mdbc (12c81cd8-bde3-4c91-a292-e6c4f868106a)
+ARG PowerShell_Module_Mdbc_RequiredVersion=6.6.5
+RUN Install-Module Mdbc -RequiredVersion ${PowerShell_Module_Mdbc_RequiredVersion} -Scope AllUsers
+
+# Install-Module Microsoft.Graph (fceec1eb-c2e8-4b2b-a120-0fab3f0d7b47)
 ARG PowerShell_Module_MicrosoftGraph_RequiredVersion=2.11.1
 RUN Install-Module Microsoft.Graph -RequiredVersion ${PowerShell_Module_MicrosoftGraph_RequiredVersion} -Scope AllUsers
 
-# Install-Module Mdbc
-ARG PowerShell_Module_Mdbc_RequiredVersion=6.6.5
-RUN Install-Module Mdbc -RequiredVersion ${PowerShell_Module_Mdbc_RequiredVersion} -Scope AllUsers
+# Install-Module Pode (e3ea217c-fc3d-406b-95d5-4304ab06c6af)
+ARG PowerShell_Module_Pode_RequiredVersion=2.9.0
+RUN Install-Module Pode -RequiredVersion ${PowerShell_Module_Pode_RequiredVersion} -Scope AllUsers
