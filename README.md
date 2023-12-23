@@ -17,7 +17,6 @@ PowerShell DevContainer (runtime environment) that aims to ease the development 
 - Mongo 7-jammy  
   
 ## Structure & Logic  
-\* ignored by git  
   
 ### /.devcontainer  
 provides a DevContainer definition / runtime environment  
@@ -60,4 +59,8 @@ PowerShell Test-Functions
   
 ### command.ps1  
 the containers main command  
+  
+---  
+  
+\* = .gitignore(d)  
   

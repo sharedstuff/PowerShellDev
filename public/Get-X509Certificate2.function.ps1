@@ -1,4 +1,4 @@
-Function Get-X509Certificate2 {
+﻿Function Get-X509Certificate2 {
 
     <#
 
