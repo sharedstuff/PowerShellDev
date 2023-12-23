@@ -2,7 +2,7 @@
   // General devcontainer.json properties
   // https://containers.dev/implementors/json_reference/
   // name - type: string - A name for the dev container displayed in the UI.
-  "name": "PowerShellDev",
+  "name": "${localWorkspaceFolderBasename}",
   // Docker Compose specific properties
   // https://containers.dev/implementors/json_reference/#compose-specific
   // dockerComposeFile - type: object|array - Required when using Docker Compose. Path or an ordered list of paths to Docker Compose files relative to the devcontainer.json file.
