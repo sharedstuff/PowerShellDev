@@ -1,13 +1,11 @@
 # PowerShellDev  
 PowerShell DevContainer (runtime environment) that aims to ease the development of PowerShell Docker Containers  
   
-  
 ## Content  
 - PowerShell DevContainer (@Alpine)  
 - Preinstalled PowerShell Modules  
 - Mongo(DB)  
 - a service example based on the DevContainer  
-  
   
 ## Specs   
 - Alpine 3.18  
@@ -18,36 +16,47 @@ PowerShell DevContainer (runtime environment) that aims to ease the development 
   - Pode 2.9.0 (e3ea217c-fc3d-406b-95d5-4304ab06c6af)  
 - Mongo 7-jammy  
   
-  
 ## Structure & Logic  
 \* ignored by git  
   
 ### /.devcontainer  
 provides a DevContainer definition / runtime environment  
   
+---  
+  
 ### /.vscode  
 some vscode workspace settings  
+  
+---  
   
 ### /config *  
 config files consumed by DevContainer  
   
-#### /config/MgGraphContainer.Certificate.pfx  
+#### /config/MgGraphContainer.Certificate.pfx *  
 the Certificate used by Connect-MgGraph(Container)
   
-#### /config/MgGraphContainer.ClientId  
+#### /config/MgGraphContainer.ClientId *  
 the ClientId used by Connect-MgGraph(Container)  
   
-#### /config/MgGraphContainer.TenantId  
+#### /config/MgGraphContainer.TenantId *  
 the TenantId used by Connect-MgGraph(Container)  
-
+  
+---  
+  
 ### /data *  
 DevContainer's persistant storage (bind-mounts)  
+  
+---  
   
 ### /public  
 public PowerShell functions  
   
+---  
+  
 ### /test  
 PowerShell Test-Functions  
+  
+---  
   
 ### command.ps1  
 the containers main command  
