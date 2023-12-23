@@ -39,6 +39,10 @@ services:
     env_file:
       - ../.env
 
+    # ports
+    ports:
+      - 80:80
+
     # volumes
     volumes:
 
