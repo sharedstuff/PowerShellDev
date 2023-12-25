@@ -47,8 +47,8 @@ DevContainer's persistant storage (bind-mounts)
   
 ---  
   
-### /public  
-public PowerShell functions  
+### /Modules  
+custom PowerShell Modules  
   
 ---  
   
