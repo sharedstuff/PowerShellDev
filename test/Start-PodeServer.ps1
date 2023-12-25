@@ -1,14 +1,5 @@
 ﻿#Requires -Modules @{ ModuleName='Pode'; GUID='e3ea217c-fc3d-406b-95d5-4304ab06c6af'; ModuleVersion='2.9.0' }
 
-# dot-source all *.function.ps1
-$GetChildItemParams = @{
-    Path    = '/'
-    Filter  = '*.function.ps1'
-    File    = $true
-    Recurse = $true
-}
-Get-ChildItem @GetChildItemParams | Select-Object -ExpandProperty FullName | ForEach-Object { . $_ }
-
 # Start a PodeServer
 $PodeServerParams = @{
     Thread = 2
