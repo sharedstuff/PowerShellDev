@@ -20,16 +20,15 @@ Function Update-DevModule {
     $ModuleManifest.Remove('PrivateData')
     $ModuleManifest.VariablesToExport=@()
 
-
     $GetChildItemParams = @{
         Path    = $PSScriptRoot
         Recurse = $true
         File    = $true
         Filter  = '*.ps1'
     }
-    $ChildItems = Get-ChildItem @GetChildItemParams
-    $ModuleManifest.FunctionsToExport = ($ChildItems.BaseName).Replace('.Function',$null) | Sort-Object
 
+    $Functions = Get-ChildItem @GetChildItemParams | Where-Object BaseName -like '*.Function'
+    $ModuleManifest.FunctionsToExport = ($Functions.BaseName).Replace('.Function',$null) | Sort-Object
 
     $ModuleManifest | Write-Verbose
 
