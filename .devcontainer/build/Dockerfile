@@ -17,11 +17,9 @@ SHELL [ "pwsh", "-NoProfile", "-Command", "$ErrorActionPreference = 'Stop';", "$
 # Set PSGallery trusted
 RUN Set-PSRepository PSGallery -InstallationPolicy trusted
 
-# Install PowerShell_Module(s) by ARG
+# Install-ModuleFast / Install PowerShell_Module(s) by ARGs
 ARG PowerShell_ModuleFolder='/usr/local/share/powershell/Modules'
 ARG PowerShell_InstallModuleFast
-
-# Install-ModuleFast
 RUN /build/Install-ModuleFast.ps1
 
 # Workdir will be /workspace (VSCode convention)
