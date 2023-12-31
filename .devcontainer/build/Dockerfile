@@ -1,5 +1,5 @@
 # https://hub.docker.com/_/debian
-ARG Container_DebianTag=stable-slim
+ARG Container_DebianTag=bookworm-slim
 FROM debian:${Container_DebianTag}
 
 # Add the context to the container

@@ -2,13 +2,13 @@
 PowerShell DevContainer (runtime environment) that aims to ease the development of PowerShell Docker Containers  
   
 ## Content  
-- PowerShell DevContainer (@Alpine)  
+- PowerShell DevContainer (@Debian 12 (Bookworm) Slim)  
 - Preinstalled PowerShell Modules  
 - Mongo(DB)  
 - examples  
   
-## Specs   
-- Alpine 3.18  
+## Specs  
+- Debian 12 (Bookworm) Slim
 - PowerShell 7.4.0  
 - PowerShell Modules:  
   - Mdbc 6.6.5 (12c81cd8-bde3-4c91-a292-e6c4f868106a)  
