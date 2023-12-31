@@ -57,10 +57,15 @@ misc. PowerShell scripts
   
 ---  
   
-### command.ps1  
-the containers main command  
+### #ephemeral.ps1  
+Example of a #ephemeral / "one-shot" container  
   
 ---  
   
+### #service.ps1  
+Example of a (persistant) #service container  
+  
+---  
+
 \* = .gitignore(d)  
   

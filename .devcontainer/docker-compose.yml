@@ -28,7 +28,29 @@ services:
       # workspace
       - ..:/workspace:cached
 
-  # service provided
+  # ephemeral container example
+  ephemeral:
+
+    # build from Dockerfile in context
+    build:
+      context: build
+
+    # env_file(s) = ENV variables are set as the container launches up - so they are available at RUNTIME
+    env_file:
+      - ../.env
+
+    # volumes
+    volumes:
+
+      # localtime
+      - /etc/localtime:/etc/localtime:ro
+
+      # workspace
+      - ..:/workspace:cached
+
+    command: pwsh -f /workspace/#ephemeral.ps1
+
+  # service container example
   service:
 
     # build from Dockerfile in context
@@ -52,7 +74,7 @@ services:
       # workspace
       - ..:/workspace:cached
 
-    command: pwsh -f /workspace/command.ps1
+    command: pwsh -f /workspace/#service.ps1
 
   # mongo(db) - #justAnotherContainer
   mongo:
