@@ -8,11 +8,12 @@ PowerShell DevContainer (runtime environment) that aims to ease the development 
 - examples  
   
 ## Specs  
-- Debian 12 (Bookworm) Slim
+- Debian 12 (Bookworm) Slim  
 - PowerShell 7.4.0  
 - PowerShell Modules:  
   - Mdbc 6.6.5 (12c81cd8-bde3-4c91-a292-e6c4f868106a)  
   - Microsoft.Graph 2.11.1 (fceec1eb-c2e8-4b2b-a120-0fab3f0d7b47)  
+  - ModuleFast 0.0.4 (89fcb0cf-1a4e-4dbf-92f5-10ce3eae241f)  
   - Pode 2.9.0 (e3ea217c-fc3d-406b-95d5-4304ab06c6af)  
 - Mongo 7-jammy  
   
