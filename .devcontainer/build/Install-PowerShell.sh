@@ -17,6 +17,3 @@ sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https:
 
 # Install PowerShell
 apt update && apt install -y powershell
-
-# Start PowerShell
-pwsh
