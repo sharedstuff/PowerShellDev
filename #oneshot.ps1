@@ -1,4 +1,4 @@
 ﻿$MyInvocation.MyCommand.Definition
 
-'Example of a #ephemeral / "one-shot" container:'
+'Example of a #oneshot / ephemeral container:'
 'Container will exit after the task is done'

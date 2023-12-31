@@ -1,14 +1,6 @@
 ﻿#Requires -Modules @{ ModuleName='Mdbc'; GUID='12c81cd8-bde3-4c91-a292-e6c4f868106a'; ModuleVersion='6.6.5' }
 
-# dot-source all *.function.ps1
-$GetChildItemParams = @{
-    Path    = '/'
-    Filter  = '*.function.ps1'
-    File    = $true
-    Recurse = $true
-}
-Get-ChildItem @GetChildItemParams | Select-Object -ExpandProperty FullName | ForEach-Object { . $_ }
-
+# Test: Connect-Mdbc (Mongo)
 # https://github.com/nightroman/Mdbc
 
 # Connect the new collection test.test

@@ -57,8 +57,8 @@ misc. PowerShell scripts
   
 ---  
   
-### #ephemeral.ps1  
-Example of a #ephemeral / "one-shot" container  
+### #oneshot.ps1  
+Example of a #oneshot (ephemeral) container  
   
 ---  
   

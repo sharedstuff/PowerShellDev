@@ -39,15 +39,15 @@ services:
       # profile.ps1
       - ../profile.ps1:/root/.config/powershell/profile.ps1:ro
 
-  # ephemeral container example
-  ephemeral:
+  # oneshot container example
+  oneshot:
 
     # build from Dockerfile in context
-    image: powershelldev-ephemeral
+    image: powershelldev-oneshot
     build:
       context: build
       tags:
-        - powershelldev-ephemeral
+        - powershelldev-oneshot
 
     # env_file(s) = ENV variables are set as the container launches up - so they are available at RUNTIME
     env_file:
@@ -62,7 +62,7 @@ services:
       # workspace
       - ..:/workspace:cached
 
-    command: pwsh -f /workspace/#ephemeral.ps1
+    command: pwsh -f /workspace/#oneshot.ps1
 
   # service container example
   service:
