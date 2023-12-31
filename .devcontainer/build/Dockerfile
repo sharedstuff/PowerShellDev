@@ -37,6 +37,9 @@ RUN apk add --no-cache \
     musl \
     openssl
 
+# Install Docker
+RUN apk add --update docker openrc && rc-update add docker boot
+
 # Download the powershell '.tar.gz' archive
 ARG PowerShell_Version=7.4.0
 ARG PowerShell_Package=powershell-${PowerShell_Version}-linux-musl-x64.tar.gz
