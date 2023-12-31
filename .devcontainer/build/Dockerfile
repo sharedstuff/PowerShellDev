@@ -69,14 +69,9 @@ HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD [ "pw
 # Set PSGallery trusted
 RUN Set-PSRepository PSGallery -InstallationPolicy trusted
 
-# Install-Module Mdbc (12c81cd8-bde3-4c91-a292-e6c4f868106a)
-ARG PowerShell_Module_Mdbc_RequiredVersion=6.6.5
-RUN Install-Module Mdbc -RequiredVersion ${PowerShell_Module_Mdbc_RequiredVersion} -Scope AllUsers
+# Install PowerShell_Module(s) by ARG
+ARG PowerShell_ModuleFolder='/usr/local/share/powershell/Modules'
+ARG PowerShell_InstallModuleFast
 
-# Install-Module Microsoft.Graph (fceec1eb-c2e8-4b2b-a120-0fab3f0d7b47)
-ARG PowerShell_Module_MicrosoftGraph_RequiredVersion=2.11.1
-RUN Install-Module Microsoft.Graph -RequiredVersion ${PowerShell_Module_MicrosoftGraph_RequiredVersion} -Scope AllUsers
-
-# Install-Module Pode (e3ea217c-fc3d-406b-95d5-4304ab06c6af)
-ARG PowerShell_Module_Pode_RequiredVersion=2.9.0
-RUN Install-Module Pode -RequiredVersion ${PowerShell_Module_Pode_RequiredVersion} -Scope AllUsers
+ADD ./Install-ModuleFast.ps1 /
+RUN /Install-ModuleFast.ps1

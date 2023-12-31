@@ -1,4 +1,4 @@
-﻿#Requires -Modules @{ ModuleName='Mdbc'; GUID='12c81cd8-bde3-4c91-a292-e6c4f868106a'; ModuleVersion='2.11.1' }
+﻿#Requires -Modules @{ ModuleName='Mdbc'; GUID='12c81cd8-bde3-4c91-a292-e6c4f868106a'; ModuleVersion='6.6.5' }
 
 # dot-source all *.function.ps1
 $GetChildItemParams = @{

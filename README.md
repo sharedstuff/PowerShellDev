@@ -5,7 +5,7 @@ PowerShell DevContainer (runtime environment) that aims to ease the development 
 - PowerShell DevContainer (@Alpine)  
 - Preinstalled PowerShell Modules  
 - Mongo(DB)  
-- a service example based on the DevContainer  
+- examples  
   
 ## Specs   
 - Alpine 3.18  
@@ -66,6 +66,6 @@ Example of a #ephemeral / "one-shot" container
 Example of a (persistant) #service container  
   
 ---  
-
+  
 \* = .gitignore(d)  
   
