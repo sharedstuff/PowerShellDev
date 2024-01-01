@@ -34,7 +34,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
 
       # .ssh
-      - ~/.ssh:/root/.ssh
+      - ~/.ssh:/media/.ssh:ro
 
       # workspace
       - ..:/workspace:cached
