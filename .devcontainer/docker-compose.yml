@@ -4,13 +4,10 @@ services:
   vscode:
 
     # build from Dockerfile in context
-    image: powershelldev-vscode
     build:
       context: build
       args:
         PowerShell_InstallModuleFast: "@{ ModuleName='Pode'; ModuleVersion='2.9.0' }, @{ ModuleName='Mdbc'; ModuleVersion='6.6.5' }, @{ ModuleName='Microsoft.Graph'; ModuleVersion='2.11.1' }"
-      tags:
-        - powershelldev-vscode
 
     # env_file(s) = ENV variables are set as the container launches up - so they are available at RUNTIME
     env_file:
@@ -46,11 +43,8 @@ services:
   oneshot:
 
     # build from Dockerfile in context
-    image: powershelldev-oneshot
     build:
       context: build
-      tags:
-        - powershelldev-oneshot
 
     # env_file(s) = ENV variables are set as the container launches up - so they are available at RUNTIME
     env_file:
@@ -71,13 +65,10 @@ services:
   service:
 
     # build from Dockerfile in context
-    image: powershelldev-service
     build:
       context: build
       args:
         PowerShell_InstallModuleFast: "@{ ModuleName='Pode'; ModuleVersion='2.9.0' }"
-      tags:
-        - powershelldev-service
 
     # env_file(s) = ENV variables are set as the container launches up - so they are available at RUNTIME
     env_file:
