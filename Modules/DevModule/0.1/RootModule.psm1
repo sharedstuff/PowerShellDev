@@ -2,6 +2,6 @@ $GetChildItemParams = @{
     Path    = Join-Path $PSScriptRoot 'Public'
     Recurse = $true
     File    = $true
-    Filter  = '*.Function.ps1'
+    Filter  = '*.ps1'
 }
-Get-ChildItem @GetChildItemParams | ForEach-Object { . $_.FullName }
+Get-ChildItem @GetChildItemParams | Where-Object { $_.BaseName -like '*.Function' -or $_.BaseName -like '*.Class' } | ForEach-Object { . $_.FullName }
