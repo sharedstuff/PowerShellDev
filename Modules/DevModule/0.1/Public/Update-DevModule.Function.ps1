@@ -34,16 +34,6 @@ Function Update-DevModule {
 
     New-ModuleManifest @ModuleManifest -Path $Path
 
-    Get-Module DevModule | Remove-Module
-    Import-Module $Path -Force
-
-    # Reload Functions
-    $GetChildItemParams = @{
-        Path    = $PSScriptRoot
-        Recurse = $true
-        File    = $true
-        Filter  = '*.Function.ps1'
-    }
-    Get-ChildItem @GetChildItemParams | ForEach-Object { . $_.FullName }
+    Import-Module $Path -Force -Scope Global
 
 }
