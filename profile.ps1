@@ -1,3 +1,6 @@
+$MyInvocation.MyCommand.Definition
+
+"`n"
 'PSVersionTable'
 $PSVersionTable
 

@@ -12,7 +12,7 @@ Function Update-DevModule {
 
     [CmdletBinding()]
     param(
-        $Path = (Join-Path $PSScriptRoot '/../DevModule.psd1')
+        $Path = (Join-Path $PSScriptRoot '../DevModule.psd1')
     )
 
     $ModuleManifest = Import-PowerShellDataFile $Path
@@ -33,5 +33,17 @@ Function Update-DevModule {
     $ModuleManifest | Write-Verbose
 
     New-ModuleManifest @ModuleManifest -Path $Path
+
+    Get-Module DevModule | Remove-Module
+    Import-Module $Path -Force
+
+    # Reload Functions
+    $GetChildItemParams = @{
+        Path    = $PSScriptRoot
+        Recurse = $true
+        File    = $true
+        Filter  = '*.Function.ps1'
+    }
+    Get-ChildItem @GetChildItemParams | ForEach-Object { . $_.FullName }
 
 }
