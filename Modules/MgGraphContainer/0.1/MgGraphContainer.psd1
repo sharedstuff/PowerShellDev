@@ -51,7 +51,9 @@ Copyright = '(c) root. All rights reserved.'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-# RequiredModules = @()
+RequiredModules = @(
+    @{ ModuleName='Microsoft.Graph.Authentication'; GUID='883916f2-9184-46ee-b1f8-b6a2fb784cee'; ModuleVersion='2.11.1' }
+)
 
 # Assemblies that must be loaded prior to importing this module
 # RequiredAssemblies = @()
