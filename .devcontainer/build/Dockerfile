@@ -2,13 +2,12 @@
 ARG Container_DebianTag=bookworm-slim
 FROM debian:${Container_DebianTag}
 
-# Add the context to the container
-ADD . /build
-
 # Install-Docker
+ADD ./Install-Docker.sh /build/Install-Docker.sh
 RUN /build/Install-Docker.sh
 
 # Install-PowerShell
+ADD ./Install-PowerShell.sh /build/Install-PowerShell.sh
 RUN /build/Install-PowerShell.sh
 
 # Set SHELL to pwsh
@@ -20,6 +19,7 @@ RUN Set-PSRepository PSGallery -InstallationPolicy trusted
 # Install-ModuleFast / Install PowerShell_Module(s) by ARGs
 ARG PowerShell_ModuleFolder='/usr/local/share/powershell/Modules'
 ARG PowerShell_InstallModuleFast
+ADD ./Install-ModuleFast.ps1 /build/Install-ModuleFast.ps1
 RUN /build/Install-ModuleFast.ps1
 
 # Workdir will be /workspace (VSCode convention)
